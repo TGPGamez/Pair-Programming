@@ -1,0 +1,33 @@
+﻿<Window x:Class="Pair_Programming.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Pair_Programming"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="400" Width="400">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="120"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Button Grid.Row="0"  Content="Add picture" HorizontalAlignment="Center" VerticalAlignment="Top" Width="90" Height="20" Click="Add_picture_btnclick" Margin="0,160,0,0"/>
+        <Button Grid.Row="1" Content="Remove picture " HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="90" Height="20" Click="Remove_picture_btnclick" Margin="0,0,0,162"/>
+        
+        <ListView x:Name="pictures_in_gui" MinHeight="300" MinWidth="150" 
+                  MaxWidth="250" Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" 
+                  HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Center">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Label Content="{Binding Path=Name}"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+    </Grid>
+</Window>
